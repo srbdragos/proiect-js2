@@ -1,4 +1,4 @@
-root.innerHTML = `
+root.innerHTML += `
 
 <form>
     <label for="name">Nume:</label>
