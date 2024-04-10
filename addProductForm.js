@@ -8,3 +8,16 @@ root.innerHTML += `
     <input type="submit" value="Adauga un telefon">
 </form>
 `; 
+
+
+function addFormFunctionality () {
+
+    const form = document.querySelector('form');
+    console.log(form)
+    form.addEventListener('submit', function (){
+        console.log('Formularul a fost submis');
+    });
+};
+
+
+window.addEventListener('load', addFormFunctionality);
