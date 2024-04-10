@@ -15,7 +15,7 @@ function addFormFunctionality () {
     const form = document.querySelector('form');
     form.addEventListener('submit', function (eventDetails) {
         eventDetails.preventDefault();
-        console.log(eventDetails);
+        console.log(eventDetails.target.price.value);
     });
 };
 
