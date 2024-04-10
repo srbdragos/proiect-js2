@@ -10,12 +10,22 @@ root.innerHTML += `
 `; 
 
 
+
 function addFormFunctionality () {
 
     const form = document.querySelector('form');
     form.addEventListener('submit', function (eventDetails) {
         eventDetails.preventDefault();
-        console.log(eventDetails.target.price.value);
+        const name = eventDetails.target.name.value;
+        const price = eventDetails.target.price.value;
+        const phone = {
+            name: name,
+            price: price
+        }
+
+        products.push(phone);
+        renderProductList(products);
+
     });
 };
 
