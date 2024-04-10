@@ -5,6 +5,9 @@ root.innerHTML += `
 
 // Functie care afiseaza lista de produse pe ecran.
 function renderProductList(products) {
+    const ul = document.querySelector('#product-list');
+    ul.innerHTML = '';
+
     // Afisam continutul static (ce nu va varia in functie de datele din JS).
 
     // forEach itereaza prin elementele array-ului.
