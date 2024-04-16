@@ -17,6 +17,14 @@ const products = [
     }
 ];
 
+const stringifiedProducts = JSON.stringify(products);
+localStorage.setItem('products', stringifiedProducts);
+
+const localStorageProducts = localStorage.getItem("products");;
+const parsedLocalStorageProducts = JSON.parse(localStorageProducts);
+console.log(parsedLocalStorageProducts);
+
+
 function startRendering() {
     // Randam(afisam) lista de produse, trimitand ca parametru produsele.
     renderProductList(products);
