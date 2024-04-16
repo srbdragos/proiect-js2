@@ -29,9 +29,14 @@ function setProducts(products) {
      localStorage.setItem('products', stringifiedProducts);
 };
 
-setProducts(products);
 
+if (localStorage.getItem('products') === null  ) {
+    setProducts(products);
+} 
 
+// else {
+//     renderProductList(getProducts()); 
+// }
 
 
 
@@ -39,7 +44,8 @@ setProducts(products);
 
 function startRendering() {
     // Randam(afisam) lista de produse, trimitand ca parametru produsele.
-    renderProductList(products);
+    const localStorageProducts = getProducts();
+    renderProductList(localStorageProducts);
 }
 // DUPA ce s-au incarcat TOATE scripturile, apelam functia startRendering.
 // Facem asta pentru ca la momentul incarcarii lui index.js, nu stim cine e renderProductList.
