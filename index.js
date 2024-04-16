@@ -1,7 +1,7 @@
 // index.js este primul fisier care se incarca, deci root va fi disponibil in toate celelalte fisiere.
 const root = document.querySelector('#root');
 // Vrem ca produsele sa fie disponibile in intreaga aplicatie, pentru a putea fi modificate.
-const products = [
+ const products = [
     {
         // Un telefon are nume si pret.
         name: 'Iphone XS',
@@ -17,12 +17,24 @@ const products = [
     }
 ];
 
-const stringifiedProducts = JSON.stringify(products);
-localStorage.setItem('products', stringifiedProducts);
+function getProducts() {
+    const localStorageProducts = localStorage.getItem("products");;
+    const parsedLocalStorageProducts = JSON.parse(localStorageProducts);
+    return parsedLocalStorageProducts;
+};
 
-const localStorageProducts = localStorage.getItem("products");;
-const parsedLocalStorageProducts = JSON.parse(localStorageProducts);
-console.log(parsedLocalStorageProducts);
+
+function setProducts(products) {
+    const stringifiedProducts = JSON.stringify(products);
+     localStorage.setItem('products', stringifiedProducts);
+};
+
+setProducts(products);
+
+
+
+
+
 
 
 function startRendering() {
